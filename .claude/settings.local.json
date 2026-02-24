@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"C:/Users/johnm/OneDrive/Desktop/Website\" && npm create vite@latest . -- --template react --yes 2>&1)",
+      "Bash(which node:*)",
+      "Bash(cmd:*)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs:/c/Users/johnm/AppData/Roaming/npm\" && node --version 2>&1 && npm --version 2>&1)",
+      "Bash(command:*)",
+      "Bash(winget install:*)",
+      "Bash(export:*)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs\" && cd \"C:/Users/johnm/OneDrive/Desktop/Website\" && npm install 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs\" && cd \"C:/Users/johnm/OneDrive/Desktop/Website\" && npm run build 2>&1)",
+      "Bash(command -v gh && gh auth status 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI\" && gh auth status 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI:/c/Program Files/nodejs\" && cd \"C:/Users/johnm/OneDrive/Desktop/Website\" && git add . && git commit -m \"Initial commit: React + Vite portfolio site\" && gh repo create portfolio --public --source=. --remote=origin --push 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI:/c/Program Files/nodejs\" && git config --global user.email \"johnmhsu11@gmail.com\" && git config --global user.name \"John Hsu\" && cd \"C:/Users/johnm/OneDrive/Desktop/Website\" && git add . && git commit -m \"Initial commit: React + Vite portfolio site\" && gh repo create portfolio --public --source=. --remote=origin --push 2>&1)"
+    ]
+  }
+}
