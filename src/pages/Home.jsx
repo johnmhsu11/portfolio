@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import SectionTitle from '../components/SectionTitle'
 import DashboardCard from '../components/DashboardCard'
 import GameCard from '../components/GameCard'
+import LastUpdated from '../components/LastUpdated'
 import dashboards from '../data/dashboards'
 import games from '../data/games'
 
@@ -56,6 +57,7 @@ export default function Home() {
             <GameCard key={g.id} game={g} />
           ))}
         </div>
+        <LastUpdated />
       </section>
     </>
   )

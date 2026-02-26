@@ -1,5 +1,6 @@
 import SectionTitle from '../components/SectionTitle'
 import GameCard from '../components/GameCard'
+import LastUpdated from '../components/LastUpdated'
 import games from '../data/games'
 
 export default function Games() {
@@ -20,6 +21,7 @@ export default function Games() {
           ))}
         </div>
       )}
+      <LastUpdated />
     </div>
   )
 }

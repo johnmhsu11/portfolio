@@ -1,5 +1,6 @@
 import SectionTitle from '../components/SectionTitle'
 import DashboardCard from '../components/DashboardCard'
+import LastUpdated from '../components/LastUpdated'
 import dashboards from '../data/dashboards'
 
 export default function Dashboards() {
@@ -20,6 +21,7 @@ export default function Dashboards() {
           ))}
         </div>
       )}
+      <LastUpdated />
     </div>
   )
 }

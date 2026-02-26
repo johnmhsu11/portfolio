@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import dashboards from '../data/dashboards'
+import LastUpdated from '../components/LastUpdated'
 
 export default function DashboardEmbed() {
   const { id } = useParams()
@@ -39,6 +40,7 @@ export default function DashboardEmbed() {
             {description && (
               <p className="text-sm text-gray-400 mt-0.5">{description}</p>
             )}
+            <LastUpdated />
           </div>
           <div className="hidden sm:flex flex-wrap gap-2 shrink-0">
             {tags.map((tag) => (
