@@ -22,7 +22,7 @@ export default function Hero() {
         </h1>
         <p className="mb-10 text-lg text-gray-400 leading-relaxed max-w-xl mx-auto">
           Data analyst &amp; hobbyist game developer. I build interactive dashboards
-          using Power BI, Python, and Streamlit — and make games for fun.
+          that surface trends, answer questions, and drive smarter decisions — and make games for fun.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
