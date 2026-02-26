@@ -1,16 +1,17 @@
-/**
- * Dashboards data
- * To embed a Power BI report:
- *  1. Open the report in Power BI Service
- *  2. File → Publish to web
- *  3. Copy the iframe src URL and paste it as embedUrl below
- */
 const dashboards = [
+  {
+    id: 'us-cost-of-living',
+    title: 'US Cost of Living',
+    description: 'Interactive comparison of rent, groceries, dining, and purchasing power across 35 major US cities.',
+    embedUrl: 'https://cost-of-living-dashboard-wuect5xxvsqmhprsb3fqud.streamlit.app/?embedded=true',
+    tags: ['Geography', 'Housing', 'Salary'],
+    thumbnail: null,
+  },
   {
     id: 'sales-overview',
     title: 'Sales Overview',
     description: 'Year-over-year revenue trends, regional breakdowns, and top-performing product categories.',
-    embedUrl: '', // paste Power BI embed URL here
+    embedUrl: '',
     tags: ['Sales', 'Revenue', 'YoY'],
     thumbnail: null,
   },
