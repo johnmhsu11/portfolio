@@ -8,8 +8,8 @@ export default function Dashboards() {
     <div className="mx-auto max-w-6xl px-6 py-16">
       <SectionTitle
         label="Analytics"
-        title="Power BI Dashboards"
-        description="A collection of interactive reports and data visualizations. Click a card to open the full embed."
+        title="Analytics Dashboards"
+        description="A collection of interactive data visualizations built with Power BI, Python, and Streamlit. Click a card to open the full embed."
       />
 
       {dashboards.length === 0 ? (

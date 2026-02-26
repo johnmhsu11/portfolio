@@ -20,8 +20,8 @@ export default function Home() {
         <div className="flex items-end justify-between mb-10">
           <SectionTitle
             label="Analytics"
-            title="Power BI Dashboards"
-            description="Interactive reports built in Power BI — click any card to explore."
+            title="Analytics Dashboards"
+            description="Interactive data visualizations built with Power BI, Python, and Streamlit — click any card to explore."
           />
           <Link
             to="/dashboards"

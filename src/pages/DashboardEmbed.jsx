@@ -89,7 +89,7 @@ export default function DashboardEmbed() {
                 <code className="rounded bg-gray-800 px-1.5 py-0.5 text-xs text-indigo-400">
                   src/data/dashboards.js
                 </code>{' '}
-                and add a Power BI "Publish to web" iframe URL for this dashboard.
+                and add an embed URL for this dashboard.
               </p>
             </div>
           </div>
