@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 
 export default function DashboardCard({ dashboard }) {
-  const { id, title, description, tags, embedUrl } = dashboard
+  const { id, title, description, tags, embedUrl, icon } = dashboard
   const navigate = useNavigate()
   const hasEmbed = Boolean(embedUrl)
 
@@ -12,7 +12,11 @@ export default function DashboardCard({ dashboard }) {
     >
       {/* Placeholder thumbnail */}
       <div className="mb-5 flex h-36 items-center justify-center rounded-lg border border-gray-700 bg-gray-900">
-        {hasEmbed ? (
+        {icon ? (
+          <span className="text-6xl select-none" role="img" aria-label={title}>
+            {icon}
+          </span>
+        ) : hasEmbed ? (
           <svg
             className="h-10 w-10 text-accent"
             fill="none"

@@ -2,10 +2,11 @@ const dashboards = [
   {
     id: 'us-cost-of-living',
     title: 'US Cost of Living',
-    description: 'Interactive comparison of rent, groceries, dining, and purchasing power across 35 major US cities.',
+    description: 'Interactive comparison of rent, groceries, dining, and purchasing power across 142 major US cities.',
     embedUrl: 'https://cost-of-living-dashboard-wuect5xxvsqmhprsb3fqud.streamlit.app/?embedded=true',
     tags: ['Geography', 'Housing', 'Salary'],
     thumbnail: null,
+    icon: '🏙️',
   },
   {
     id: 'sales-overview',
