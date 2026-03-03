@@ -1,0 +1,88 @@
+import { useParams, Link } from 'react-router-dom'
+import games from '../data/games'
+
+export default function GameEmbed() {
+  const { id } = useParams()
+  const game = games.find((g) => g.id === id)
+
+  if (!game) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[60vh] px-6 text-center">
+        <p className="text-4xl mb-4">🎮</p>
+        <h2 className="text-2xl font-bold text-white mb-2">Game not found</h2>
+        <p className="text-gray-400 mb-6">No game matches the ID "{id}".</p>
+        <Link
+          to="/games"
+          className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-400 transition-colors"
+        >
+          ← Back to Games
+        </Link>
+      </div>
+    )
+  }
+
+  const { title, description, tags, embedUrl } = game
+
+  return (
+    <div className="flex flex-col min-h-[calc(100vh-4rem)]">
+      {/* Header */}
+      <div className="border-b border-gray-700 bg-gray-900 px-6 py-4">
+        <div className="mx-auto max-w-7xl flex items-center justify-between gap-4">
+          <div>
+            <Link
+              to="/games"
+              className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+            >
+              ← Games
+            </Link>
+            <h1 className="mt-1 text-xl font-bold text-white">{title}</h1>
+            {description && (
+              <p className="text-sm text-gray-400 mt-0.5">{description}</p>
+            )}
+          </div>
+          {tags && (
+            <div className="hidden sm:flex flex-wrap gap-2 shrink-0">
+              {tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-gray-600 px-2.5 py-0.5 text-xs text-gray-400"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Embed area */}
+      <div className="flex-1 bg-gray-950">
+        {embedUrl ? (
+          <iframe
+            title={title}
+            src={embedUrl}
+            className="w-full h-full"
+            style={{ minHeight: 'calc(100vh - 10rem)', border: 'none' }}
+            allowFullScreen
+          />
+        ) : (
+          <div className="flex flex-col items-center justify-center h-full min-h-[60vh] px-6 text-center">
+            <div className="rounded-xl border border-dashed border-gray-600 p-12 max-w-md">
+              <p className="text-5xl mb-4">🎮</p>
+              <h3 className="text-base font-semibold text-gray-300 mb-2">
+                Game URL not configured
+              </h3>
+              <p className="text-sm text-gray-500">
+                Open{' '}
+                <code className="rounded bg-gray-800 px-1.5 py-0.5 text-xs text-indigo-400">
+                  src/data/games.js
+                </code>{' '}
+                and set an <code className="rounded bg-gray-800 px-1.5 py-0.5 text-xs text-indigo-400">embedUrl</code> for this game.
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}

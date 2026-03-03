@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Dashboards from './pages/Dashboards'
 import DashboardEmbed from './pages/DashboardEmbed'
 import Games from './pages/Games'
+import GameEmbed from './pages/GameEmbed'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
             <Route path="/dashboards" element={<Dashboards />} />
             <Route path="/dashboards/:id" element={<DashboardEmbed />} />
             <Route path="/games" element={<Games />} />
+            <Route path="/games/:id" element={<GameEmbed />} />
           </Routes>
         </main>
         <Footer />
