@@ -1,9 +1,15 @@
+import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import games from '../data/games'
 
 export default function GameEmbed() {
   const { id } = useParams()
   const game = games.find((g) => g.id === id)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
+  }, [])
 
   if (!game) {
     return (
@@ -54,6 +60,25 @@ export default function GameEmbed() {
           )}
         </div>
       </div>
+
+      {/* Mobile warning banner */}
+      {isMobile && embedUrl && (
+        <div className="border-b border-amber-700/40 bg-amber-900/25 px-6 py-2.5">
+          <div className="mx-auto max-w-7xl flex flex-wrap items-center justify-between gap-3">
+            <p className="text-sm text-amber-300">
+              This game is designed for desktop — some controls may not work on mobile.
+            </p>
+            <a
+              href={embedUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 text-sm font-medium text-amber-300 underline underline-offset-2 hover:text-amber-200 transition-colors"
+            >
+              Open in browser ↗
+            </a>
+          </div>
+        </div>
+      )}
 
       {/* Embed area */}
       <div className="flex-1 bg-gray-950">

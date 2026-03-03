@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import dashboards from '../data/dashboards'
 import LastUpdated from '../components/LastUpdated'
@@ -5,6 +6,8 @@ import LastUpdated from '../components/LastUpdated'
 export default function DashboardEmbed() {
   const { id } = useParams()
   const dashboard = dashboards.find((d) => d.id === id)
+  const [iframeKey, setIframeKey] = useState(0)
+  const [showBanner, setShowBanner] = useState(true)
 
   if (!dashboard) {
     return (
@@ -42,23 +45,65 @@ export default function DashboardEmbed() {
             )}
             <LastUpdated />
           </div>
-          <div className="hidden sm:flex flex-wrap gap-2 shrink-0">
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-gray-600 px-2.5 py-0.5 text-xs text-gray-400"
-              >
-                {tag}
-              </span>
-            ))}
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <div className="hidden sm:flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-gray-600 px-2.5 py-0.5 text-xs text-gray-400"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            {embedUrl && (
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setIframeKey((k) => k + 1)}
+                  title="Reload dashboard"
+                  className="rounded-lg border border-gray-600 px-3 py-1.5 text-xs text-gray-400 hover:border-gray-400 hover:text-white transition-colors"
+                >
+                  Reload
+                </button>
+                <a
+                  href={embedUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Open in new tab"
+                  className="rounded-lg border border-gray-600 px-3 py-1.5 text-xs text-gray-400 hover:border-gray-400 hover:text-white transition-colors"
+                >
+                  Open ↗
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>
+
+      {/* Sleep state banner */}
+      {embedUrl && showBanner && (
+        <div className="border-b border-blue-700/40 bg-blue-900/20 px-6 py-2.5">
+          <div className="mx-auto max-w-7xl flex flex-wrap items-center justify-between gap-3">
+            <p className="text-sm text-blue-300">
+              <span className="font-medium">Dashboard not loading?</span> Free-tier apps sleep after inactivity.
+              Use <strong>Open ↗</strong> to wake it up, then hit <strong>Reload</strong>.
+            </p>
+            <button
+              onClick={() => setShowBanner(false)}
+              className="shrink-0 text-blue-400 hover:text-blue-200 transition-colors text-lg leading-none"
+              aria-label="Dismiss"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Embed area */}
       <div className="flex-1 bg-gray-950">
         {embedUrl ? (
           <iframe
+            key={iframeKey}
             title={title}
             src={embedUrl}
             className="w-full h-full"
