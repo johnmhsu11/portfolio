@@ -6,6 +6,8 @@ export default function GameEmbed() {
   const { id } = useParams()
   const game = games.find((g) => g.id === id)
   const [isMobile, setIsMobile] = useState(false)
+  const [iframeKey, setIframeKey] = useState(0)
+  const [gameLoaded, setGameLoaded] = useState(false)
 
   useEffect(() => {
     setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
@@ -46,18 +48,40 @@ export default function GameEmbed() {
               <p className="text-sm text-gray-400 mt-0.5">{description}</p>
             )}
           </div>
-          {tags && (
-            <div className="hidden sm:flex flex-wrap gap-2 shrink-0">
-              {tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-gray-600 px-2.5 py-0.5 text-xs text-gray-400"
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            {tags && (
+              <div className="hidden sm:flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-gray-600 px-2.5 py-0.5 text-xs text-gray-400"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+            {embedUrl && (
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => { setGameLoaded(false); setIframeKey((k) => k + 1) }}
+                  title="Reload game"
+                  className="rounded-lg border border-gray-600 px-3 py-1.5 text-xs text-gray-400 hover:border-gray-400 hover:text-white transition-colors"
                 >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
+                  Reload
+                </button>
+                <a
+                  href={embedUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Open in new tab"
+                  className="rounded-lg border border-gray-600 px-3 py-1.5 text-xs text-gray-400 hover:border-gray-400 hover:text-white transition-colors"
+                >
+                  Open ↗
+                </a>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
@@ -81,15 +105,30 @@ export default function GameEmbed() {
       )}
 
       {/* Embed area */}
-      <div className="flex-1 bg-gray-950">
+      <div className="relative flex-1 bg-gray-950">
         {embedUrl ? (
-          <iframe
-            title={title}
-            src={embedUrl}
-            className="w-full h-full"
-            style={{ minHeight: 'calc(100vh - 10rem)', border: 'none' }}
-            allowFullScreen
-          />
+          <>
+            {/* Loading overlay — visible until iframe fires onLoad */}
+            {!gameLoaded && (
+              <div
+                className="absolute inset-0 flex flex-col items-center justify-center gap-4"
+                style={{ minHeight: 'calc(100vh - 10rem)' }}
+              >
+                <div className="animate-spin rounded-full h-10 w-10 border-2 border-gray-700 border-t-indigo-400" />
+                <p className="text-sm text-gray-400">Waking up server…</p>
+                <p className="text-xs text-gray-600">First load may take up to 30 seconds</p>
+              </div>
+            )}
+            <iframe
+              key={iframeKey}
+              title={title}
+              src={embedUrl}
+              className={`w-full h-full transition-opacity duration-500 ${gameLoaded ? 'opacity-100' : 'opacity-0'}`}
+              style={{ minHeight: 'calc(100vh - 10rem)', border: 'none' }}
+              allowFullScreen
+              onLoad={() => setGameLoaded(true)}
+            />
+          </>
         ) : (
           <div className="flex flex-col items-center justify-center h-full min-h-[60vh] px-6 text-center">
             <div className="rounded-xl border border-dashed border-gray-600 p-12 max-w-md">
