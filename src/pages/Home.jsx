@@ -3,13 +3,16 @@ import Hero from '../components/Hero'
 import SectionTitle from '../components/SectionTitle'
 import DashboardCard from '../components/DashboardCard'
 import GameCard from '../components/GameCard'
+import WebsiteCard from '../components/WebsiteCard'
 import LastUpdated from '../components/LastUpdated'
 import dashboards from '../data/dashboards'
 import games from '../data/games'
+import websites from '../data/websites'
 
 export default function Home() {
   const featuredDashboards = dashboards.slice(0, 3)
   const featuredGames = games.slice(0, 2)
+  const featuredWebsites = websites.slice(0, 3)
 
   return (
     <>
@@ -58,6 +61,28 @@ export default function Home() {
           ))}
         </div>
         <LastUpdated />
+      </section>
+
+      {/* Websites preview */}
+      <section className="mx-auto max-w-6xl px-6 py-16 border-t border-gray-800">
+        <div className="flex items-end justify-between mb-10">
+          <SectionTitle
+            label="Websites"
+            title="Website Projects"
+            description="Websites I've designed and built from scratch."
+          />
+          <Link
+            to="/websites"
+            className="hidden sm:inline-flex text-sm text-accent hover:text-indigo-300 transition-colors shrink-0 ml-4 mb-1"
+          >
+            View all →
+          </Link>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {featuredWebsites.map((w) => (
+            <WebsiteCard key={w.id} website={w} />
+          ))}
+        </div>
       </section>
     </>
   )

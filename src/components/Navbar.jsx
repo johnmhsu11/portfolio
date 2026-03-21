@@ -23,6 +23,9 @@ export default function Navbar() {
           <NavLink to="/games" className={linkClass}>
             Games
           </NavLink>
+          <NavLink to="/websites" className={linkClass}>
+            Websites
+          </NavLink>
         </div>
       </nav>
     </header>
