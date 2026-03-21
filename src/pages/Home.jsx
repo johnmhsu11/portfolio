@@ -20,8 +20,13 @@ export default function Home() {
 
       {/* About */}
       <section className="mx-auto max-w-6xl px-6 pb-4 pt-2">
-        <div className="rounded-xl border border-gray-700 bg-gray-800/50 px-8 py-8 grid sm:grid-cols-3 gap-8">
-          <div className="sm:col-span-2">
+        <div className="rounded-xl border border-gray-700 bg-gray-800/50 px-8 py-8 flex flex-col sm:flex-row gap-8 items-center">
+          <img
+            src="/john-hsu.jpg"
+            alt="John Hsu"
+            className="w-32 h-32 rounded-full object-cover object-top shrink-0 ring-2 ring-gray-600"
+          />
+          <div className="flex-1 text-center sm:text-left">
             <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-accent">About</p>
             <h2 className="mb-3 text-xl font-bold text-white">Channel Analytics Manager · Hologic</h2>
             <p className="text-sm text-gray-400 leading-relaxed">
@@ -30,7 +35,7 @@ export default function Home() {
               is a collection of those personal projects.
             </p>
           </div>
-          <div className="flex flex-col justify-center gap-3">
+          <div className="flex flex-col justify-center gap-3 shrink-0">
             <a
               href="https://www.linkedin.com/in/john-hsu-183bbb31/"
               target="_blank"
