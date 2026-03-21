@@ -16,13 +16,15 @@ export default function Hero() {
         <p className="mb-4 text-sm font-medium uppercase tracking-widest text-accent">
           Portfolio
         </p>
-        <h1 className="mb-6 text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
-          Hi, I'm{' '}
-          <span className="text-accent">John Hsu</span>
+        <h1 className="mb-4 text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
+          John Hsu
         </h1>
-        <p className="mb-10 text-lg text-gray-400 leading-relaxed max-w-xl mx-auto">
-          Data analyst &amp; hobbyist game developer. I build interactive dashboards
-          that surface trends, answer questions, and drive smarter decisions — and make games for fun.
+        <p className="mb-2 text-lg font-medium text-accent tracking-wide">
+          Channel Analytics Manager · Hologic
+        </p>
+        <p className="mb-10 text-base text-gray-400 leading-relaxed max-w-xl mx-auto">
+          I build data-driven tools and dashboards that surface trends, answer hard questions,
+          and support smarter decisions — plus the occasional game and website on the side.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -33,12 +35,22 @@ export default function Hero() {
             View Dashboards
             <span aria-hidden>→</span>
           </Link>
-          <Link
-            to="/games"
+          <a
+            href="https://www.linkedin.com/in/john-hsu-183bbb31/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-lg border border-gray-600 px-6 py-3 text-sm font-semibold text-gray-300 hover:border-gray-400 hover:text-white transition-colors"
           >
-            Explore Games
-          </Link>
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/johnmhsu11"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border border-gray-600 px-6 py-3 text-sm font-semibold text-gray-300 hover:border-gray-400 hover:text-white transition-colors"
+          >
+            GitHub
+          </a>
         </div>
       </div>
     </section>

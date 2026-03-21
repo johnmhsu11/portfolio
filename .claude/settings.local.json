@@ -13,7 +13,29 @@
       "Bash(command -v gh && gh auth status 2>&1)",
       "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI\" && gh auth status 2>&1)",
       "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI:/c/Program Files/nodejs\" && cd \"C:/Users/johnm/OneDrive/Desktop/Website\" && git add . && git commit -m \"Initial commit: React + Vite portfolio site\" && gh repo create portfolio --public --source=. --remote=origin --push 2>&1)",
-      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI:/c/Program Files/nodejs\" && git config --global user.email \"johnmhsu11@gmail.com\" && git config --global user.name \"John Hsu\" && cd \"C:/Users/johnm/OneDrive/Desktop/Website\" && git add . && git commit -m \"Initial commit: React + Vite portfolio site\" && gh repo create portfolio --public --source=. --remote=origin --push 2>&1)"
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI:/c/Program Files/nodejs\" && git config --global user.email \"johnmhsu11@gmail.com\" && git config --global user.name \"John Hsu\" && cd \"C:/Users/johnm/OneDrive/Desktop/Website\" && git add . && git commit -m \"Initial commit: React + Vite portfolio site\" && gh repo create portfolio --public --source=. --remote=origin --push 2>&1)",
+      "WebSearch",
+      "WebFetch(domain:advisorsmith.com)",
+      "WebFetch(domain:www.livingcost.net)",
+      "WebFetch(domain:www.numbeo.com)",
+      "WebFetch(domain:www.gigasheet.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:livingcostindex.com)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI:/c/Program Files/nodejs\" && cd \"C:/Users/johnm/OneDrive/Desktop/CostOfLivingDashboard\" && git init && git add . && git commit -m \"Initial commit: US Cost of Living Streamlit dashboard\" && gh repo create cost-of-living-dashboard --public --source=. --remote=origin --push 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI:/c/Program Files/nodejs\" && cd \"C:/Users/johnm/OneDrive/Desktop/Website\" && git add src/data/dashboards.js && git commit -m \"Add US Cost of Living Streamlit dashboard\" && git push 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI:/c/Program Files/nodejs\" && cd \"C:/Users/johnm/OneDrive/Desktop/CostOfLivingDashboard\" && git add us_cost_of_living.csv && git commit -m \"Expand dataset from 35 to 142 US cities\" && git push 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI:/c/Program Files/nodejs\" && cd \"C:/Users/johnm/OneDrive/Desktop/CostOfLivingDashboard\" && git add app.py && git commit -m \"Add data sources section to dashboard\" && git push 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI:/c/Program Files/nodejs\" && cd \"C:/Users/johnm/OneDrive/Desktop/Website\" && git add vite.config.js src/components/LastUpdated.jsx src/pages/Home.jsx src/pages/Dashboards.jsx src/pages/Games.jsx src/pages/DashboardEmbed.jsx && git commit -m \"Add build-time last updated timestamp to all pages\" && git push 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI\" && gh api repos/johnmhsu11/cost-of-living-dashboard/contents/us_cost_of_living.csv --jq '.size' 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI:/c/Program Files/nodejs\" && cd \"C:/Users/johnm/OneDrive/Desktop/Website\" && git add src/components/DashboardCard.jsx src/data/dashboards.js && git commit -m \"Add emoji icon to CoL dashboard card\" && git push 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI:/c/Program Files/nodejs\" && cd \"C:/Users/johnm/OneDrive/Desktop/Website\" && git add src/pages/Home.jsx src/pages/Dashboards.jsx src/pages/DashboardEmbed.jsx src/components/Hero.jsx && git commit -m \"Update site language to reflect Power BI, Python, and Streamlit tooling\" && git push 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI:/c/Program Files/nodejs\" && cd \"C:/Users/johnm/OneDrive/Desktop/Website\" && git add src/components/Hero.jsx && git commit -m \"Rewrite hero tagline to focus on insights over tools\" && git push 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI\" && cd \"C:/Users/johnm/OneDrive/Desktop/CostOfLivingDashboard\" && git add app.py && git commit -m \"Remove rent and purchasing power charts; scatter plot now full width\" && git push 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI\" && cd \"C:/Users/johnm/OneDrive/Desktop/CostOfLivingDashboard\" && git add app.py && git commit -m \"Add Select All / Clear All buttons to states filter\" && git push 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI:/c/Program Files/nodejs\" && cd \"C:/Users/johnm/OneDrive/Desktop/LifeExpectancyDashboard\" && git init && git add . && git commit -m \"Initial commit: Life Expectancy by Nation dashboard\" && gh repo create life-expectancy-dashboard --public --source=. --remote=origin --push 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI:/c/Program Files/nodejs\" && cd \"C:/Users/johnm/OneDrive/Desktop/AutoValueDashboard\" && git init && git add . && git commit -m \"Initial commit: Automobile True Value vs Price dashboard\" && gh repo create auto-value-dashboard --public --source=. --remote=origin --push 2>&1)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI:/c/Program Files/nodejs\" && cd \"C:/Users/johnm/OneDrive/Desktop/Website\" && git add src/data/dashboards.js && git commit -m \"Add Life Expectancy and Auto Value dashboards\" && git push 2>&1)",
+      "Bash(cd:*)"
     ]
   }
 }

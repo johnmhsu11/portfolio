@@ -26,30 +26,6 @@ const dashboards = [
     thumbnail: null,
     icon: '🚗',
   },
-  {
-    id: 'sales-overview',
-    title: 'Sales Overview',
-    description: 'Year-over-year revenue trends, regional breakdowns, and top-performing product categories.',
-    embedUrl: '',
-    tags: ['Sales', 'Revenue', 'YoY'],
-    thumbnail: null,
-  },
-  {
-    id: 'customer-analytics',
-    title: 'Customer Analytics',
-    description: 'Customer segmentation, retention rates, lifetime value, and churn analysis.',
-    embedUrl: '',
-    tags: ['Customers', 'Retention', 'CLV'],
-    thumbnail: null,
-  },
-  {
-    id: 'operational-kpis',
-    title: 'Operational KPIs',
-    description: 'Supply chain efficiency, inventory turnover, and operational cost tracking.',
-    embedUrl: '',
-    tags: ['Operations', 'KPIs', 'Supply Chain'],
-    thumbnail: null,
-  },
 ]
 
 export default dashboards

@@ -17,22 +17,6 @@ const games = [
     embedUrl: 'https://cribbage-p9cp.onrender.com',
     playUrl: null,
   },
-  {
-    id: 'game-one',
-    title: 'Project Alpha',
-    description: 'A fast-paced browser-based puzzle game. More details coming soon.',
-    status: 'coming-soon',
-    thumbnail: null,
-    playUrl: null,
-  },
-  {
-    id: 'game-two',
-    title: 'Project Beta',
-    description: 'An idle strategy game built with vanilla JS. In development.',
-    status: 'coming-soon',
-    thumbnail: null,
-    playUrl: null,
-  },
 ]
 
 export default games
